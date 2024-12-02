@@ -144,7 +144,7 @@ namespace GettingStarted
     {
 	    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 	    {
-		    optionsBuilder.UseSqlServer(connectionString: "Data Source=localhost;Initial Catalog=Test");
+		    optionsBuilder.UseSqlServer(connectionString: "Data Source=localhost;Initial Catalog=Test;User Id=sa;Password=Password123!; TrustServerCertificate=True");
 
             base.OnConfiguring(optionsBuilder);
 	    }

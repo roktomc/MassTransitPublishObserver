@@ -1,0 +1,23 @@
+services:
+    rabbitmq:
+        image: masstransit/rabbitmq
+        environment:
+            RABBITMQ_DEFAULT_USER: user
+            RABBITMQ_DEFAULT_PASS: password
+        ports:
+            - 5672:5672
+            - 15672:15672
+    
+    mssql:
+        container_name: mssql-db
+        hostname: mssql-db
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        environment:
+            ACCEPT_EULA: 'Y'
+            MSSQL_SA_PASSWORD: 'Password123!'
+            MSSQL_DATA_DIR: /var/opt/mssql
+            MSSQL_PID: 'Developer'
+            MSSQL_TCP_PORT: 1433
+        ports:
+            - 1433:1433
+
